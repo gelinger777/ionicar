@@ -1,4 +1,4 @@
-import { Action } from 'redux';
+import { Action } from "@ngrx/store";
 
 // import every model
 import { PlatformDeviceState, INITIAL_STATE_PLATFORM_DEVICE } from "./platform-device/platform-device.model";

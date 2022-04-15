@@ -73,6 +73,7 @@ import
   getMagnetometer,
   getCameraPreview,
 } from './app.providers';
+import { StoreModule } from '@ngrx/store';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -86,7 +87,7 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [
     BrowserModule,
     HttpClientModule,
-   // StoreModule,
+   //<eStoreModule,
     // SplashModule,
     // SpinnerModule,
     // NgReduxModule,
@@ -103,11 +104,10 @@ export function createTranslateLoader(http: HttpClient) {
         ]
       }
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [
-   
-    
     { provide: Device, useClass: getDevice() },
     { provide: HTTP, useClass: getHTTP() },    //HTTP mocked with empty functions. Calls managed with mocked json data
     { provide: Network, useClass: getNetwork() },
